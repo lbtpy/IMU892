@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main2016 {
@@ -103,6 +104,7 @@ public class Main2016 {
          */
 
         //矩阵处理，m * n ,每行元素按升序排列
+        //法一 : 二维数组，冒泡排序
         /*int n = in.nextInt();
         int m = in.nextInt();
         int[][] arr = new int[n][m];
@@ -114,19 +116,41 @@ public class Main2016 {
             }
         }
         //升序排序
-        for( int i =0; i< n; i++ ){
-            for(int j = 0; j < m-1 ; j++ ) {
-                if (arr[i][j] > arr[i][j + 1]) {
-                    int temp = arr[i][j];
-                    arr[i][j] = arr[i][j + 1];
-                    arr[i][j + 1] = temp;
+        for( int i =0; i< n; i++ ){ //行循环
+            for ( int j = 0; j < m; j++) { //每行循环的次数
+                for ( int z = 0; z < m-j-1; z++) { //每列的元素位置
+                    if( arr[i][z] > arr[i][z+1]) {
+                        int temp = arr[i][z];
+                        arr[i][z] = arr[i][z + 1];
+                        arr[i][z + 1] = temp;
+                    }
                 }
             }
+            System.out.println(Arrays.toString(arr[i]));
         }
 
-        //输出矩阵
-        for( int i =0; i< n; i++ ) {
-            for( int j =0; j< m; j++ ) {
+         */
+
+        //法二 : Arrays.sort() 排序
+        /*int n = in.nextInt();
+        int m = in.nextInt();
+        int[][] arr = new int[n][m];
+
+        System.out.println("输入排序前的矩阵");
+        for(int i  = 0; i < n; i++){
+            for (int j = 0; j < m; j++){
+                arr[i][j] = in.nextInt();
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+        for (int i =0; i < arr.length; i++){
+            Arrays.sort(arr[i]);
+        }
+
+        System.out.println("排序后的矩阵");
+        for(int i  = 0; i < arr.length; i++){
+            for (int j = 0; j < arr[i].length; j++){
                 System.out.print(arr[i][j]+" ");
             }
             System.out.println();
