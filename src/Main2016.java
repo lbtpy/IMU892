@@ -41,9 +41,9 @@ public class Main2016 {
         /*int number = in.nextInt();
         InverseNumber( number );
         }
-        public static int InverseNumber( int i ){
+        public static void InverseNumber( int i ){
             if( i< 10){
-                return i;
+                System.out.print(i);
             }
             else{
                 int m = i%10;
@@ -51,7 +51,6 @@ public class Main2016 {
                 int n = i/10;
                 InverseNumber(n);
             }
-
 
          */
 
@@ -83,7 +82,7 @@ public class Main2016 {
         }
         System.out.println("个数="+count);
 
-         */
+
 
         //杨辉三角
         /*int n = in.nextInt(); //行
