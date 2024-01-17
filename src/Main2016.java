@@ -84,12 +84,12 @@ public class Main2016 {
 
 
 
-        //杨辉三角
+        //杨辉三角 直角
         /*int n = in.nextInt(); //行
         int[][] number = new int[n][n];
         for( int i = 0 ; i < n ; i++ ) {
             for( int j = 0; j <= i; j++ ) {
-                if( i==0 || j==0 || i==j ){
+                if( j==0 || i==j ){
                     number[i][j] = 1;
                 }
                 else{

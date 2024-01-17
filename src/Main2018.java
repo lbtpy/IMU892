@@ -1,13 +1,10 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main2018 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner in = new Scanner(System.in);
 
         //回文数，输入多个数字进行判断
@@ -28,7 +25,7 @@ public class Main2018 {
          */
 
         //输入字符串，字母和空格，判断单词的个数
-        /*String str = getString();
+        String str = getString();
         String[] str1 = str.split(" ");
         int count = 0;
         for(String s:str1){
@@ -38,7 +35,7 @@ public class Main2018 {
         }
         System.out.println(count);
 
-         */
+
 
         //输入元素，组成矩阵，输出每列的最大值，并求它们的和
         //矩阵每行的最大值，和
@@ -227,6 +224,7 @@ public class Main2018 {
         }
          */
 
+
         //输入一组互不相等的百分制成绩，-1结束，由高到低输出成绩及其位置号，位置号由输入顺序确定
         /*int n = in.nextInt();
         List<Grade> list = new ArrayList<Grade>();
@@ -307,13 +305,85 @@ public class Main2018 {
             }
             System.out.println("请输入指令，1-加，2-减，3-乘，4-除，5-退出");
             n = in.nextInt();
+
+        //输入十个数，计算其中最大数并计算平均数
+        /*int n = in.nextInt();
+        int[] arr = new int[n];
+        int count = 0;
+        double sum = 0;
+        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = in.nextInt();
+            count++;
+            sum += arr[i];
+        }
+        System.out.println("平均数=" + (double)(sum / count));
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    max = arr[j];
+                }
+
+            }
+        }
+        System.out.println("最大值为" + max);
+
+         */
+
+        //斐波那契数列：1,1,2,3,5,8,13……,前n项数列之和
+        /*int n = in.nextInt();
+        int sum = 0;
+        for(int i=1;i<=n; i++) {
+            System.out.println("第"+i+"个的值为"+Sum(i));
+            sum+=Sum(i);
+        }
+        System.out.println("和为"+sum);
+    }
+
+         */
+
+        //杨辉三角等腰
+        /*int n = in.nextInt();//行数
+        int [][]arr = new int[n][n];
+        for(int i = 0; i< arr.length;i++) {
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || i == j) {
+                    arr[i][j] = 1;
+                } else {
+                    arr[i][j] = arr[i - 1][j] + arr[i - 1][j - 1];
+                }
+            }
+        }
+        //等腰输出
+        for(int i = 0; i<arr.length; i++){
+            for(int j = 0; j < arr.length- 1 - i; j++){
+                System.out.print(" ");
+            }
+            for(int j = 0; j <= i; j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+
         }
 
          */
 
 
+
+
+        //输出a到b之间 素数 的回文数
+//        PrimeNumberAndHw prime = new PrimeNumberAndHw();
+//        int a = in.nextInt();
+//        int b = in.nextInt();
+//        prime.setPrime(a,b);
+//        prime.getPrime();
+//        String []str = new String[a];
+//        for(int i = a; i <= b; i++){
+//
+//        }
+
     }
-}
+//}
     //回文数 判断 类、方法
     /*private static class Reverse{
         boolean isPalindrome(int x){
@@ -321,19 +391,19 @@ public class Main2018 {
                 return false;
             }
             int reverseNnumber = 0;
-            while( x > reverseNnumber){
+            while( x > reverseNnumber){ //对数取逆，剩下数小于取出的时，剩下的至多2位不用比较了
                 reverseNnumber = reverseNnumber * 10 + x % 10;
                 x = x / 10;
             }
-            return x == reverseNnumber || x == reverseNnumber / 10;
+            return x == reverseNnumber || x == reverseNnumber / 10; //对剩下的进行判断，如果符合回文数，则正确，反之不然
         }
-    }
+
     }
 
      */
 
     //字符串 空格 判断单词个数 类
-    /*public static String getString() throws IOException {
+    public static String getString() throws IOException {
         BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("请输入长度小于100的字符串");
         String str = buffer.readLine();
@@ -346,7 +416,7 @@ public class Main2018 {
     }
 }
 
-     */
+
 
     //输入9进制数，转换为十九进制数
     /*public static int to10(String s){
@@ -433,11 +503,21 @@ public class Main2018 {
             int tmp = in.nextInt();
             sum +=tmp;
             return getsum(n-1,sum);//n-1,控制数的个数
+
+    //斐波那契数列
+    /*public static long Sum(int n){
+        if(n==1 || n==2){
+            return 1;
+        }
+        else {
+            return Sum(n-1)+Sum(n-2);
+
         }
     }
 }
 
      */
+
 
     //输入一行字符（个数<=100），查找其中的数字字符，输出数字字符组成的数字之和。注意，数字字符可能组成两位或两位以上的数字
     /*public static void myStyleSum(String str){
@@ -458,3 +538,42 @@ public class Main2018 {
 }
 
      */
+
+    //输出a到b之间 素数 的回文数
+//    class PrimeNumberAndHw {
+//        private static int start;
+//        private static int end;
+//
+//        static boolean isPrime(int x) { //判断是否是素数
+//            if (x == 1) {
+//                return false;
+//            }
+//            for (int i = 2; i < x; i++) {
+//                if (x % i == 0) {
+//                    return false;
+//                }
+//            }
+//            return true;
+//        }
+//        void setPrime(int a, int b){ //设置区间
+//            if( a > b ){
+//                this.start = b;
+//                this.end = a;
+//            }
+//            else {
+//                this.start = a;
+//                this.end = b;
+//            }
+//        }
+//        static String  getPrime() { //找出区间内的素数
+//            for(int i = start; i <= end; i++ ) {
+//                if (isPrime(i)) {
+//
+//                }
+//            }
+//            return null;
+//        }
+//
+//
+//    }
+
