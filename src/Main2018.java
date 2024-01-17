@@ -227,7 +227,91 @@ public class Main2018 {
         }
          */
 
-        //
+        //输入一组互不相等的百分制成绩，-1结束，由高到低输出成绩及其位置号，位置号由输入顺序确定
+        /*int n = in.nextInt();
+        List<Grade> list = new ArrayList<Grade>();
+        int p = 1;
+        while (n != -1) {
+            list.add(new Grade(p++, n));
+            n = in.nextInt();
+        }
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).grade < list.get(j).grade) {
+                    Grade temp = list.get(j);
+                    list.set(j, list.get(i));
+                    list.set(i, temp);
+                }
+            }
+        }
+        for (int i = 0; i < list.size() && i < 10; i++) {
+            System.out.print(list.get(i).num + "号" + list.get(i).grade + "分" + " ");
+        }
+
+         */
+
+        //输入正整数n，再输入n个数，计算并输出这n个数之和。必须使用递归
+        /*int n = in.nextInt();
+        System.out.println(getsum(n,0));
+
+         */
+
+        //输入一个数，输出比它大的五个最小素数之和
+        /*int n = in.nextInt();
+        int i = 0;
+        int sum = 0;
+        while(i < 5){
+            n++;
+            boolean flag = true;
+            if( n==2 ){
+                sum+=2;
+                i++;
+                continue;
+            }
+            for (int j = 2; j < n; j++){
+                if(n%j == 0){
+                    flag = false;
+                }
+            }
+            if(flag){
+                sum+=n;
+                i++;
+            }
+        }
+        System.out.println(sum);
+
+         */
+
+        //输入一行字符（个数<=100），查找其中的数字字符，输出数字字符组成的数字之和。注意，数字字符可能组成两位或两位以上的数字
+        /*String str = "a11b22c3";
+        myStyleSum(str);
+
+         */
+
+        //设计菜单，完成简单计算器功能
+        /*System.out.println("请输入指令，1-加，2-减，3-乘，4-除，5-退出");
+        int n =in.nextInt();
+        while(n < 5){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            if(n == 1){
+                System.out.println(a+b);
+            }else if(n == 2){
+                System.out.println(a-b);
+            }else if (n == 3) {
+                System.out.println(a*b);
+            }else if (n == 4) {
+                System.out.println(a/b);
+            }else{
+                break;
+            }
+            System.out.println("请输入指令，1-加，2-减，3-乘，4-除，5-退出");
+            n = in.nextInt();
+        }
+
+         */
+
+
     }
 }
     //回文数 判断 类、方法
@@ -322,6 +406,54 @@ public class Main2018 {
                 System.out.print(arr[i]+" ");
             }
         }
+    }
+}
+
+     */
+
+    //输入一组互不相等的百分制成绩，-1结束，由高到低输出成绩及其位置号，位置号由输入顺序确定
+    /*class Grade{
+        int num;
+        int grade;
+        public Grade(int num,int grade){
+            this.grade = grade;
+            this.num = num;
+        }
+    }
+
+     */
+
+    //输入一个数，输出比它大的五个最小素数之和
+    /*public static int getsum(int n, int sum){
+        if(n == 0){
+            return sum;
+        }
+        else{
+            Scanner in = new Scanner(System.in);
+            int tmp = in.nextInt();
+            sum +=tmp;
+            return getsum(n-1,sum);//n-1,控制数的个数
+        }
+    }
+}
+
+     */
+
+    //输入一行字符（个数<=100），查找其中的数字字符，输出数字字符组成的数字之和。注意，数字字符可能组成两位或两位以上的数字
+    /*public static void myStyleSum(String str){
+        String regex = "\\p{Alpha}+";
+        int sum = 0;
+        String []s = str.split(regex);
+        if(s[0].length()!=0){
+            for(int i=0; i<s.length;i++){
+                sum+=Integer.parseInt(s[i]);
+            }
+        } else{
+            for(int i=1; i<s.length; i++){
+                sum+=Integer.parseInt(s[i]);
+            }
+        }
+        System.out.println(sum);
     }
 }
 
