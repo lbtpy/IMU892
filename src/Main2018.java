@@ -1,9 +1,3 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main2018 {
@@ -227,7 +221,77 @@ public class Main2018 {
         }
          */
 
-        //
+        //输入十个数，计算其中最大数并计算平均数
+        /*int n = in.nextInt();
+        int[] arr = new int[n];
+        int count = 0;
+        double sum = 0;
+        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = in.nextInt();
+            count++;
+            sum += arr[i];
+        }
+        System.out.println("平均数=" + (double)(sum / count));
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    max = arr[j];
+                }
+
+            }
+        }
+        System.out.println("最大值为" + max);
+
+         */
+
+        //斐波那契数列：1,1,2,3,5,8,13……,前n项数列之和
+        /*int n = in.nextInt();
+        int sum = 0;
+        for(int i=1;i<=n; i++) {
+            System.out.println("第"+i+"个的值为"+Sum(i));
+            sum+=Sum(i);
+        }
+        System.out.println("和为"+sum);
+    }
+
+         */
+
+        //杨辉三角等腰
+        /*int n = in.nextInt();//行数
+        int [][]arr = new int[n][n];
+        for(int i = 0; i< arr.length;i++) {
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || i == j) {
+                    arr[i][j] = 1;
+                } else {
+                    arr[i][j] = arr[i - 1][j] + arr[i - 1][j - 1];
+                }
+            }
+        }
+        //等腰输出
+        for(int i = 0; i<arr.length; i++){
+            for(int j = 0; j < arr.length- 1 - i; j++){
+                System.out.print(" ");
+            }
+            for(int j = 0; j <= i; j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+         */
+
+        //输出a到b之间 素数 的回文数
+        PrimeNumberAndHw prime = new PrimeNumberAndHw();
+        int a = in.nextInt();
+        int b = in.nextInt();
+        prime.setPrime(a,b);
+        prime.getPrime();
+        String []str = new String[];
+//        for(int i = a; i <= b; i++){
+//
+//        }
     }
 }
     //回文数 判断 类、方法
@@ -237,13 +301,13 @@ public class Main2018 {
                 return false;
             }
             int reverseNnumber = 0;
-            while( x > reverseNnumber){
+            while( x > reverseNnumber){ //对数取逆，剩下数小于取出的时，剩下的至多2位不用比较了
                 reverseNnumber = reverseNnumber * 10 + x % 10;
                 x = x / 10;
             }
-            return x == reverseNnumber || x == reverseNnumber / 10;
+            return x == reverseNnumber || x == reverseNnumber / 10; //对剩下的进行判断，如果符合回文数，则正确，反之不然
         }
-    }
+
     }
 
      */
@@ -326,3 +390,54 @@ public class Main2018 {
 }
 
      */
+
+    //斐波那契数列
+    /*public static long Sum(int n){
+        if(n==1 || n==2){
+            return 1;
+        }
+        else {
+            return Sum(n-1)+Sum(n-2);
+        }
+    }
+}
+
+     */
+
+    //输出a到b之间 素数 的回文数
+    class PrimeNumberAndHw {
+        private int start;
+        private int end;
+
+        boolean isPrime(int x) { //判断是否是素数
+            if (x == 1) {
+                return false;
+            }
+            for (int i = 2; i < x; i++) {
+                if (x % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        void setPrime(int a, int b){ //设置区间
+            if( a > b ){
+                this.start = b;
+                this.end = a;
+            }
+            else {
+                this.start = a;
+                this.end = b;
+            }
+        }
+        String  getPrime() { //找出区间内的素数
+            for(int i = start; i <= end; i++ ) {
+                if (isPrime(i)) {
+//                    return PrimeNumberAndHw.toString();
+                }
+            }
+            return null;
+        }
+
+
+    }
