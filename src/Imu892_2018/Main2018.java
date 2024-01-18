@@ -1,10 +1,12 @@
+package Imu892_2018;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Main2018 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         //回文数，输入多个数字进行判断
@@ -25,7 +27,7 @@ public class Main2018 {
          */
 
         //输入字符串，字母和空格，判断单词的个数
-        String str = getString();
+        /*String str = getString();
         String[] str1 = str.split(" ");
         int count = 0;
         for(String s:str1){
@@ -35,7 +37,7 @@ public class Main2018 {
         }
         System.out.println(count);
 
-
+         */
 
         //输入元素，组成矩阵，输出每列的最大值，并求它们的和
         //矩阵每行的最大值，和
@@ -173,112 +175,8 @@ public class Main2018 {
 
          */
 
-        //输入一组百分制分数，等级判断
-        /*int n = in.nextInt();
-        int [] arr = new int[n];
-        for (int i = 0; i < arr.length; i++){
-            arr[i] = in.nextInt();
-            switch (arr[i]/10) {
-                case 10:
-                case 9:
-                    System.out.println("成绩为A");
-                    break;
-                case 8:
-                    System.out.println("成绩为B");
-                    break;
-                case 7:
-                    System.out.println("成绩为c");
-                    break;
-                case 6:
-                    System.out.println("成绩为d");
-                    break;
-                default:
-                    System.out.println("成绩等级为E");
-                    break;
-            }
-        }
-
-         */
-
-        //输入一组数，将其中的奇数，逆序输出，例如：1 2 3 4 5 7. 7 5 3 1
-        /*int n = in.nextInt();
-        int []arr = new int[n];
-        int []b = new int[n];
-        int p = 0;
-        for(int i = 0; i < arr.length; i++){
-            arr[i] = in.nextInt();
-            if(arr[i]%2 !=0){
-                b[p++] = arr[i];
-            }
-        }
-        for (int i = b.length-1; i >= 0; i--){
-            if( b[i] != 0) {
-                System.out.print(b[i] + " ");
-            }
-        }
-
-         */
-
-        //输入两个数，作为区间，输出区间内整数 任意位 含3 的整数
-        /*putContain3(39,49);
-        }
-         */
 
 
-        //输入一组互不相等的百分制成绩，-1结束，由高到低输出成绩及其位置号，位置号由输入顺序确定
-        /*int n = in.nextInt();
-        List<Grade> list = new ArrayList<Grade>();
-        int p = 1;
-        while (n != -1) {
-            list.add(new Grade(p++, n));
-            n = in.nextInt();
-        }
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i).grade < list.get(j).grade) {
-                    Grade temp = list.get(j);
-                    list.set(j, list.get(i));
-                    list.set(i, temp);
-                }
-            }
-        }
-        for (int i = 0; i < list.size() && i < 10; i++) {
-            System.out.print(list.get(i).num + "号" + list.get(i).grade + "分" + " ");
-        }
-
-         */
-
-        //输入正整数n，再输入n个数，计算并输出这n个数之和。必须使用递归
-        /*int n = in.nextInt();
-        System.out.println(getsum(n,0));
-
-         */
-
-        //输入一个数，输出比它大的五个最小素数之和
-        /*int n = in.nextInt();
-        int i = 0;
-        int sum = 0;
-        while(i < 5){
-            n++;
-            boolean flag = true;
-            if( n==2 ){
-                sum+=2;
-                i++;
-                continue;
-            }
-            for (int j = 2; j < n; j++){
-                if(n%j == 0){
-                    flag = false;
-                }
-            }
-            if(flag){
-                sum+=n;
-                i++;
-            }
-        }
-        System.out.println(sum);
-
-         */
 
         //输入一行字符（个数<=100），查找其中的数字字符，输出数字字符组成的数字之和。注意，数字字符可能组成两位或两位以上的数字
         /*String str = "a11b22c3";
@@ -306,42 +204,6 @@ public class Main2018 {
             System.out.println("请输入指令，1-加，2-减，3-乘，4-除，5-退出");
             n = in.nextInt();
 
-        //输入十个数，计算其中最大数并计算平均数
-        /*int n = in.nextInt();
-        int[] arr = new int[n];
-        int count = 0;
-        double sum = 0;
-        int max = 0;
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = in.nextInt();
-            count++;
-            sum += arr[i];
-        }
-        System.out.println("平均数=" + (double)(sum / count));
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] < arr[j]) {
-                    max = arr[j];
-                }
-
-            }
-        }
-        System.out.println("最大值为" + max);
-
-         */
-
-        //斐波那契数列：1,1,2,3,5,8,13……,前n项数列之和
-        /*int n = in.nextInt();
-        int sum = 0;
-        for(int i=1;i<=n; i++) {
-            System.out.println("第"+i+"个的值为"+Sum(i));
-            sum+=Sum(i);
-        }
-        System.out.println("和为"+sum);
-    }
-
-         */
-
         //杨辉三角等腰
         /*int n = in.nextInt();//行数
         int [][]arr = new int[n][n];
@@ -368,22 +230,8 @@ public class Main2018 {
 
          */
 
-
-
-
-        //输出a到b之间 素数 的回文数
-//        PrimeNumberAndHw prime = new PrimeNumberAndHw();
-//        int a = in.nextInt();
-//        int b = in.nextInt();
-//        prime.setPrime(a,b);
-//        prime.getPrime();
-//        String []str = new String[a];
-//        for(int i = a; i <= b; i++){
-//
-//        }
-
     }
-//}
+}
     //回文数 判断 类、方法
     /*private static class Reverse{
         boolean isPalindrome(int x){
@@ -403,7 +251,7 @@ public class Main2018 {
      */
 
     //字符串 空格 判断单词个数 类
-    public static String getString() throws IOException {
+    /*public static String getString() throws IOException {
         BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("请输入长度小于100的字符串");
         String str = buffer.readLine();
@@ -416,7 +264,7 @@ public class Main2018 {
     }
 }
 
-
+     */
 
     //输入9进制数，转换为十九进制数
     /*public static int to10(String s){
@@ -461,64 +309,6 @@ public class Main2018 {
 
      */
 
-    //输入两个数，作为区间，输出区间内整数 任意位 含3 的整数
-    /*public static void putContain3(int a, int b){
-        int []arr = new int[b-a];
-        int p = 0;
-        for (int i = a; i <= b; i++){
-            String str = ""+i;
-            if(str.contains("3")){
-                arr[p++] = i;
-            }
-        }
-        for (int i = 0; i < arr.length; i++){
-            if(arr[i] != 0){
-                System.out.print(arr[i]+" ");
-            }
-        }
-    }
-}
-
-     */
-
-    //输入一组互不相等的百分制成绩，-1结束，由高到低输出成绩及其位置号，位置号由输入顺序确定
-    /*class Grade{
-        int num;
-        int grade;
-        public Grade(int num,int grade){
-            this.grade = grade;
-            this.num = num;
-        }
-    }
-
-     */
-
-    //输入一个数，输出比它大的五个最小素数之和
-    /*public static int getsum(int n, int sum){
-        if(n == 0){
-            return sum;
-        }
-        else{
-            Scanner in = new Scanner(System.in);
-            int tmp = in.nextInt();
-            sum +=tmp;
-            return getsum(n-1,sum);//n-1,控制数的个数
-
-    //斐波那契数列
-    /*public static long Sum(int n){
-        if(n==1 || n==2){
-            return 1;
-        }
-        else {
-            return Sum(n-1)+Sum(n-2);
-
-        }
-    }
-}
-
-     */
-
-
     //输入一行字符（个数<=100），查找其中的数字字符，输出数字字符组成的数字之和。注意，数字字符可能组成两位或两位以上的数字
     /*public static void myStyleSum(String str){
         String regex = "\\p{Alpha}+";
@@ -539,41 +329,4 @@ public class Main2018 {
 
      */
 
-    //输出a到b之间 素数 的回文数
-//    class PrimeNumberAndHw {
-//        private static int start;
-//        private static int end;
-//
-//        static boolean isPrime(int x) { //判断是否是素数
-//            if (x == 1) {
-//                return false;
-//            }
-//            for (int i = 2; i < x; i++) {
-//                if (x % i == 0) {
-//                    return false;
-//                }
-//            }
-//            return true;
-//        }
-//        void setPrime(int a, int b){ //设置区间
-//            if( a > b ){
-//                this.start = b;
-//                this.end = a;
-//            }
-//            else {
-//                this.start = a;
-//                this.end = b;
-//            }
-//        }
-//        static String  getPrime() { //找出区间内的素数
-//            for(int i = start; i <= end; i++ ) {
-//                if (isPrime(i)) {
-//
-//                }
-//            }
-//            return null;
-//        }
-//
-//
-//    }
 

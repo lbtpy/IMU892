@@ -1,3 +1,5 @@
+package Imu892_2017;
+
 import java.util.Scanner;
 
 public class Main2017 {

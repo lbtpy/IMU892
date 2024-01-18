@@ -1,3 +1,5 @@
+package Imu892_2016;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -82,25 +84,6 @@ public class Main2016 {
         }
         System.out.println("个数="+count);
 
-
-
-        //杨辉三角 直角
-        /*int n = in.nextInt(); //行
-        int[][] number = new int[n][n];
-        for( int i = 0 ; i < n ; i++ ) {
-            for( int j = 0; j <= i; j++ ) {
-                if( j==0 || i==j ){
-                    number[i][j] = 1;
-                }
-                else{
-                    number[i][j] = number[i-1][j-1]+number[i-1][j];
-                }
-                System.out.print(number[i][j]+" ");
-            }
-            System.out.println();
-        }
-
-         */
 
         //矩阵处理，m * n ,每行元素按升序排列
         //法一 : 二维数组，冒泡排序
