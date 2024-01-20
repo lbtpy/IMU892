@@ -11,11 +11,11 @@ public class Evalue {
             n++;
             item = 1.0 / fact(n);
         }
-        System.out.printf("e=%f", e);
+        System.out.printf("%f", e);
     }
-    private static double fact( double i ){
+    private static double fact( double i ){ //阶乘
         double sum = 1;
-        for( int m=1 ; m<= i; m++){
+        for( int m=1; m <= i; m++){
             sum *= m;
         }
         return sum;

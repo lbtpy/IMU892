@@ -8,21 +8,20 @@ public class Prime {
         Scanner in = new Scanner(System.in);
         int a = in.nextInt();
         int b = in.nextInt();
-        primeGeneretor prime = new primeGeneretor();
-        prime.setPrime(a,b);
+        primeGeneretor prime = new primeGeneretor(a,b);
         prime.getPrime();
     }
 }
 class primeGeneretor{
     private int start;
     private int end;
-    void setPrime(int a, int b) {
+    public primeGeneretor(int a, int b){
         if (a > b) {
-            this.start = b;
-            this.end = a;
+            start = b;
+            end = a;
         } else {
-            this.start = a;
-            this.end = b;
+            start = a;
+            end = b;
         }
     }
     boolean isPrime(int n) {

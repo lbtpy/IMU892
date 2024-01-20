@@ -8,13 +8,13 @@ public class CommonDivisorMultiple {
         Scanner in = new Scanner(System.in);
         int m = in.nextInt();
         int n = in.nextInt();
-        int max = (m>=n)? m:n;
-        int min = (m<=n)? m:n;
+        int max = Math.max(m, n);
+        int min = Math.min(m, n);
         //最大公约数
         for(int i = min; i >= 1; i--){
             if( max%i == 0 && min%i ==0){
                 System.out.println("最大公约数为" + i);
-                break;
+                break;  //及时退出循环
             }
         }
         //最大公倍数; 法二 = 两数的积 = 最大公约数 * 最小公倍数

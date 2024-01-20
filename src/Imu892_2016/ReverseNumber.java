@@ -11,13 +11,13 @@ public class ReverseNumber {
         }
     public static void InverseNumber( int i ){
         if( i< 10){
-            System.out.print(i);
+            System.out.print(i);    //小于10直接输出
         }
         else{
             int m = i%10;
-            System.out.print(m);
+            System.out.print(m);    //输出个位
             int n = i/10;
-            InverseNumber(n);
+            InverseNumber(n);   //除了个位，剩余位递归进行
         }
     }
 }

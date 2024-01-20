@@ -7,10 +7,10 @@ public class MergeSeriesNumber {
         congrate(arr1, arr2);
     }
     public static void congrate(int arr1[],int arr2[]){
-        int k=0,j=0;
+        int k=0,j=0;    // 定义两个数组的指针
         int[] arr=new int[arr1.length+arr2.length];
         for(int i=0;i<arr.length;i++){
-            if(j<arr1.length&&k<arr2.length){
+            if(j<arr1.length&&k<arr2.length){   //指针的范围不能超出
                 if(arr1[j]>=arr2[k]){
                     arr[i]=arr1[j];
                     j++;
@@ -29,6 +29,5 @@ public class MergeSeriesNumber {
         for(int i = 0; i <arr.length; i++){
             System.out.print(arr[i]+" ");
         }
-
     }
 }

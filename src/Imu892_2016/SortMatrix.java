@@ -19,6 +19,7 @@ public class SortMatrix {
         }
         //升序排序
         for( int i =0; i< n; i++ ){ //行循环
+            //冒泡排序
             for ( int j = 0; j < m; j++) { //每行循环的次数
                 for ( int z = 0; z < m-j-1; z++) { //每列的元素位置
                     if( arr[i][z] > arr[i][z+1]) {
