@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 //两个数之间的偶数和
 public class EvenNumberSum {
+
+    public static void entrance(Scanner in){
+        methodOne(in);
+        methodTwo(in);
+    }
     public static void methodOne(Scanner in) {
         long m = in.nextInt();
         long n = in.nextInt();

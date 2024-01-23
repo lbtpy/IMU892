@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 //杨辉三角等腰
 public class YangHuiDengYao {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void entrance(Scanner in){
+        yangHuiDengYao(in);
+    }
+    public static void yangHuiDengYao(Scanner in) {
         int n = in.nextInt();//行数
         int [][]arr = new int[n][n];
         for(int i = 0; i< arr.length;i++) {

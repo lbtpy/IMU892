@@ -2,10 +2,13 @@ package Imu892_2017;
 
 //经历的天数
 public class Days {
-    public static void main(String[] args) {
-        String oldDay = "1999年6月6日";
-        String newOlday = "2021年12月12日";
-        System.out.print(countDays(oldDay,newOlday));
+    public static void entrance(){
+        day();
+    }
+    public static void day() {
+        String oldDay = "2021年11月19日";
+        String newday = "2021年12月13日";
+        System.out.print(countDays(oldDay,newday));
     }
     public static boolean isRunNian( int years){
         boolean flag = false;
@@ -30,22 +33,34 @@ public class Days {
         for(int i = oldyears; i <= newyears; i++){
             if(isRunNian(i)){
                 days[1] = 29;
-                year = 365;
+                year = 366;
             }
-            if(i == oldyears){
-                sumdays = days[oldmonths-1]-olddays-1;
-                for (int j= oldmonths; j < 12; j++){
-                    sumdays+=days[j];
+            //同一年
+            if (i == oldyears && i == newyears) {
+                //同一月
+                if(oldmonths == newmonths){
+                    sumdays = newdays - olddays;
+                } else { //不同月
+                    sumdays = days[oldmonths - 1] - olddays + 1;
+                    for(int j = oldmonths; j <= newmonths-2; j++){
+                        sumdays += days[j];
+                    }
+                    sumdays+=newdays;
                 }
-            }
-            else if(i == newyears){
-                for (int j= 0; j < newmonths-1; j++){
-                    sumdays+=days[j];
+            } else { //不同年
+                if(i == oldyears) {
+                    sumdays = days[oldmonths - 1] - olddays + 1;
+                    for (int j = oldmonths; j < 12; j++) {
+                        sumdays += days[j];
+                    }
+                } else if (i == newyears) {
+                    for (int j= 0; j < newmonths-1; j++){
+                        sumdays+=days[j];
+                    }
+                    sumdays+=newdays;
+                } else {
+                    sumdays+=year;
                 }
-                sumdays+=newdays;
-            }
-            else {
-                sumdays+=year;
             }
         }
         return sumdays;

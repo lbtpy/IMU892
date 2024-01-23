@@ -4,8 +4,11 @@ import java.util.Scanner;
 
 //输入两个数，求它们之间的素数
 public class Prime {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void entrance(Scanner in){
+
+        prime(in);
+    }
+    public static void prime(Scanner in) {
         int a = in.nextInt();
         int b = in.nextInt();
         primeGeneretor prime = new primeGeneretor(a,b);
@@ -36,9 +39,14 @@ class primeGeneretor{
         return true;
     }
     void getPrime(){
+        int n = 0;
         for(int i = start; i <= end; i++){
             if(isPrime(i)) {
-                System.out.println(i);
+                System.out.print(i+" ");
+                n++;
+                if(n % 5 == 0){
+                    System.out.println();
+                }
             }
         }
     }

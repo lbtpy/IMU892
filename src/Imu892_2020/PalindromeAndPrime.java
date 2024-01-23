@@ -8,9 +8,9 @@ public class PalindromeAndPrime {
         Scanner in = new Scanner(System.in);
         int a = in.nextInt();
         int b = in.nextInt();
-        for (int i = a; i<=b; i++){
-            if(isPalindrome(i)&&isPrime(i)){
-                System.out.println(i+"既是回文数也是素数");
+        for (int i = a; i<=b; i++) {
+            if (isPalindrome(i) && isPrime(i)) {
+                System.out.println(i + "既是回文数也是素数");
             }
         }
     }
