@@ -6,54 +6,52 @@ import java.util.Scanner;
 
 //班级学生，姓名，出生年月，排序
 public class SortAge {
-    public static void entrance(){
-        putName();
+    public static void entrance(Scanner in) {
+        putName(in);
     }
-        public static void putName(){
-            String []s1;
-            String str;
-            String regex1="\\s";
-            List<Student> list=new ArrayList<>();
-            Scanner sc=new Scanner(System.in);
-            for(int i=0;i<3;i++){
-                System.out.println("请输入");
-                str=sc.nextLine();
-                s1=str.split(regex1);
-                list.add(new Student(s1[0],getDate(s1[1])));
-            }
-            System.out.println("结果");
-            for(int i=0;i<list.size();i++){
-                for(int j=i+1;j<list.size();j++){
-                    if(list.get(i).date>list.get(j).date){
-                        Student tmp=list.get(j);
-                        list.set(j,list.get(i));
-                        list.set(i,tmp);
-                    }
+    public static void putName(Scanner in){
+        String str;
+        String regex = "\\s";
+        String[] s1;
+        List<Student> list = new ArrayList<>();
+        for(int i = 0; i < 3; i++){
+            System.out.println("请输入第"+(i+1)+"人的姓名和生日");
+            str = in.nextLine();
+            s1 = str.split(regex);
+            list.add(new Student(s1[0],getDate(s1[1]))); //分割后，添加进列表，同步进行实例化
+        }
+        //按生日大小，排序
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).date > list.get(j).date) {
+                    Student temp = list.get(i);
+                    list.set(i,list.get(j));
+                    list.set(j,temp);
                 }
             }
-            for(int i=0;i<list.size();i++){
-                System.out.println(list.get(i).name+" ");
-            }
         }
-        public static Integer getDate(String s2){
-            String regex="\\D+";
-            String str="";
-            String []arr=s2.split(regex);
-            for(int i=0;i<arr.length;i++){
-                str=str+arr[i];
-            }
-            return Integer.parseInt(str);
-        }
-        public static void main(String[] args) {
-            putName();
+        //输出结果
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i).name+" ");
         }
     }
-class Student{
+    public static Integer getDate(String x){
+        String str = "";
+        String regex = "\\D+";
+        String[] s = x.split(regex);
+        for (int i = 0; i < s.length; i++) {
+            str = str + s[i];
+        }
+        return Integer.parseInt(str);
+    }
+}
+
+class Student{ //定义学生类，属性
     String name;
     Integer date;
-    public Student(String name, Integer date) {
-        super();
+    public  Student(String name, Integer date){
         this.name = name;
         this.date = date;
     }
 }
+

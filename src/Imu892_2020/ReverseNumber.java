@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 //递归的逆序输出整数
 public class ReverseNumber {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+    public static void entrance(Scanner in){
+        reverse(in);
+    }
+    public static void reverse(Scanner in) {
+        int n = in.nextInt();
         reverseNumber(n);
     }
     public static void reverseNumber(int num){
@@ -20,5 +22,4 @@ public class ReverseNumber {
             reverseNumber(m);
         }
     }
-
 }

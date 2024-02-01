@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 //输出a到b之间 回文素数
 public class PalindromeAndPrime {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void entrance(Scanner in){
+        palindromeAndPrime(in);
+    }
+    public static void palindromeAndPrime(Scanner in) {
         int a = in.nextInt();
         int b = in.nextInt();
         for (int i = a; i<=b; i++) {
@@ -26,16 +28,16 @@ public class PalindromeAndPrime {
         return true;
     }
 
-    public static boolean isPalindrome(int num) {
+    public static boolean isPalindrome(int num) { //回文数判断，先转换为字符串，左右指针， 互相逐个对比
         String str = String.valueOf(num);
         int left = 0;
         int right = str.length() - 1;
         while (left < right) {
-            if (str.charAt(left) != str.charAt(right)) {
+            if(str.charAt(left) != str.charAt(right)){
                 return false;
             }
-            left++;
-            right--;
+            left ++;
+            right --;
         }
         return true;
     }

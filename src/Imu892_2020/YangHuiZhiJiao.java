@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 //杨辉直角
 public class YangHuiZhiJiao {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void entrance(Scanner in){
+        yhzj(in);
+    }
+    public static void yhzj(Scanner in) {
         int n = in.nextInt(); //行
         int[][] number = new int[n][n];
         for( int i = 0 ; i < n ; i++ ) {

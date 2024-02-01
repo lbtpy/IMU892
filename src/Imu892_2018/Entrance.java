@@ -12,7 +12,7 @@ public class Entrance {
         //WordsCount.wordCountTwo(in);
         //MatrixColumnSum.entrance(in);
         //To19.entrance(in);
-        //SortAge.entrance();
+        SortAge.entrance(in);
         //YangHuiDengYao.entrance(in);
         //Snake.entrance(in);
     }

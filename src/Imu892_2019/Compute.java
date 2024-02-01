@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 //设计菜单，完成简单计算器功能
 public class Compute {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void entrance (Scanner in){
+        compute(in);
+    }
+    public static void compute(Scanner in) {
         System.out.println("请输入指令，1-加，2-减，3-乘，4-除，5-退出");
         int n = in.nextInt();
         while (n < 5) {

@@ -13,7 +13,7 @@ public class OddsNumber {
         for(int i = 0; i < arr.length; i++){
             arr[i] = in.nextInt();
             if(arr[i]%2 !=0){
-                b[p++] = arr[i];
+                b[p++] = arr[i]; //将奇数存入数组b，其余位置默认的是0
             }
         }
         for (int i = b.length-1; i >= 0; i--){
