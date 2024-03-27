@@ -1,10 +1,9 @@
 package Imu892_2022;
-
 import java.util.Arrays;
 
 public class Time {
     public static void main(String[] args) {
-        long curtime = System.currentTimeMillis()/1000;
+        long curtime = System.currentTimeMillis() / 1000;
         System.out.println(curtime+"秒");
         int[] month = {31,28,31,30,31,30,31,31,30,31,30,31};
         int rYearTime = 366 * 86400;
@@ -13,7 +12,7 @@ public class Time {
         //算年
         for (year = 1970; year < 2050; year++) {
             //闰年判断
-            if (year%4 ==0 && year%100 !=0 || year%400 == 0) {
+            if (year % 4 == 0 && year % 100 !=0 || year % 400 == 0) {
                 if(curtime >= rYearTime ) {
                     curtime -= 366 * 86400;
                 }else {
@@ -52,13 +51,13 @@ public class Time {
         long surplusSecs = curtime % 86400;
 
         //算小时
-        long nowHour = surplusSecs / 3600 + 8;
+        long nowHour = surplusSecs / 3600 + 8; //有时区差
 
-        //剩余的分钟
+        //剩余的分钟 秒数
         surplusSecs %= 3600;
 
         //算分钟
-        long nowMin = surplusSecs /60;
+        long nowMin = surplusSecs / 60;
         String nowMinStr = String.format("%02d", nowMin);
 
         //算秒

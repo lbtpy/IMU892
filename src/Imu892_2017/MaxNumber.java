@@ -8,8 +8,8 @@ public class MaxNumber {
         maxNumber(in);
     }
     public static void maxNumber(Scanner in){
-        int max = 0;    //定义初值max=int型最小值
-        int min = 0;    //定义初值min=int型最大值
+        int max = 0;    //定义初值max
+        int min = 0;    //定义初值min
         System.out.print("请输入数字个数：");
         int n = in.nextInt();
         for (int i = 1; i <= n; i++) {

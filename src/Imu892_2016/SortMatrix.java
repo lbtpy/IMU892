@@ -58,7 +58,7 @@ public class SortMatrix {
             if (low > high) {
                 return;
             }
-            p = row[low];
+            p = row[low];//基准第一个元素
             i = low;
             j = high;
             while (i != j) {

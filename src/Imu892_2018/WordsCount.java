@@ -15,7 +15,7 @@ public class WordsCount {
         String str = getString();
         String[] str1 = str.split(" ");
         int count = 0;
-        for(String s:str1){
+        for(String s:str1){ //增强for循环，每次将str1中的值，赋给 String类型的s
             if(! s.trim().isEmpty()){
                 count++;
             }

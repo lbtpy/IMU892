@@ -9,10 +9,15 @@ public class CommonDivisorMultiple {
         commonDivisorMutipleTwo(in);
     }
     public static void commonDivisorMutipleOne(Scanner in) {
+
+        //输入两个数
         int m = in.nextInt();
         int n = in.nextInt();
+
+        //设出两个数中的最大最小值
         int max = Math.max(m, n);
         int min = Math.min(m, n);
+
         //最大公约数
         for(int i = min; i >= 1; i--){
             if( max%i == 0 && min%i ==0){
@@ -20,11 +25,11 @@ public class CommonDivisorMultiple {
                 break;  //及时退出循环
             }
         }
-        //最大公倍数; 法二 = 两数的积 = 最大公约数 * 最小公倍数
+
+        //最小公倍数; 法二 = 两数的积 = 最大公约数 * 最小公倍数
         for (int i = max; i <= max * min; i++) {
-            if (i%min ==0 && i%max == 0) {
-                System.out.println("最大公倍数为" + i);
-                break;
+            if(i%max == 0 && i%min == 0){
+                System.out.println(i+"是两个数的最小公倍数");
             }
         }
     }
@@ -42,6 +47,6 @@ public class CommonDivisorMultiple {
             }
         }
         //法二 = 两数的积 = 最大公约数 * 最小公倍数
-       System.out.println("最小公倍数为"+(m*n/i));
+       System.out.println("最小公倍数为"+(m * n / i));
     }
 }

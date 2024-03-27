@@ -11,7 +11,6 @@ public class Fibonacci {
         int n = in.nextInt();
         int a = 0;  //和
         for (int i=1;i<=n; i++) {
-            System.out.println("第"+i+"个的值为"+Sum(i));
             a += Sum(i);
         }
         System.out.println("和为" + a);

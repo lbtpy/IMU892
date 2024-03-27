@@ -10,7 +10,7 @@ public class Entrance {
         //Frictions.entrance(in);
         //ReverseStr.entrance();
         //Days.entrance();
-        //MergeSeriesNumber.entrance();
+        MergeSeriesNumber.entrance();
     }
 }
 

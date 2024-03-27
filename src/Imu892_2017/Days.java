@@ -19,19 +19,24 @@ public class Days {
     }
     public static int countDays(String oldDate, String newDate){
         String regex = "\\D+";
+        //将两个日期的数字分割出来
         String[] oldarr = oldDate.split(regex);
         String[] newarr = newDate.split(regex);
+
         int[] days = {31,28,31,30,31,30,31,31,30,31,30,31};
         int sumdays = 0;
         int year = 365;
+
         int oldyears = Integer.parseInt(oldarr[0]);
         int oldmonths = Integer.parseInt(oldarr[1]);
         int olddays = Integer.parseInt(oldarr[2]);
         int newyears = Integer.parseInt(newarr[0]);
         int newmonths = Integer.parseInt(newarr[1]);
         int newdays = Integer.parseInt(newarr[2]);
+
+        //年的遍历
         for(int i = oldyears; i <= newyears; i++){
-            if(isRunNian(i)){
+            if(isRunNian(i)){ //闰年，总天数和2月天数 改变
                 days[1] = 29;
                 year = 366;
             }
@@ -40,14 +45,16 @@ public class Days {
                 //同一月
                 if(oldmonths == newmonths){
                     sumdays = newdays - olddays;
-                } else { //不同月
+                } else {
+                    //不同月
                     sumdays = days[oldmonths - 1] - olddays + 1;
                     for(int j = oldmonths; j <= newmonths-2; j++){
                         sumdays += days[j];
                     }
-                    sumdays+=newdays;
+                    sumdays += newdays;
                 }
-            } else { //不同年
+            } else {
+                //不同年
                 if(i == oldyears) {
                     sumdays = days[oldmonths - 1] - olddays + 1;
                     for (int j = oldmonths; j < 12; j++) {

@@ -12,8 +12,8 @@ public class Evalue {
         Evalue.EValueThree();
    }
    public static void eValue(){
-        double mul = 1; //
-        double e = 1; //
+        double mul = 1; //分母
+        double e = 1; //总和
         long i = 2;
         long start = System.nanoTime();
         while (mul <= MAX_VALUE) { //最后一项值 小于，分之一 就大于

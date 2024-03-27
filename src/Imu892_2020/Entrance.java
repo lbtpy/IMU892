@@ -13,6 +13,6 @@ public class Entrance {
         //ReverseNumber.entrance(in);
         //RegexCompute.entrance();
         //SortOddsNumber.entrance();
-        FileReadMaxWord.entrance();
+        //FileReadMaxWord.entrance();
     }
 }

@@ -28,13 +28,12 @@ public class StrNumberCount {
 
     public static void strNumberCountTwo(Scanner in){
         String str = in.nextLine();
-        int index = 0;
         int count = 0;
         String temp = "";
-        for (; index < str.length(); index++ ) {
-            if (Character.isDigit(str.charAt(index))) {
-                temp += str.charAt(index);
-                if (index == str.length() - 1) {
+        for (int i = 0; i < str.length(); i++ ) {
+            if (Character.isDigit(str.charAt(i))) {
+                temp += str.charAt(i);
+                if (i == str.length() - 1) {
                     System.out.println(temp);
                     count++;
                     break;
